@@ -20,9 +20,3 @@ fi
 if [ $? -ne 0 ]; then
     exit 1
 fi
-
-# lein radagast
-. "$HOOKS_DIR/modules/lein-radagast.sh"
-if [ $? -ne 0 ]; then
-    exit 1
-fi
