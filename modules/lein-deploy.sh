@@ -1,10 +1,8 @@
 #!/bin/bash
-RET=0
 
-if [ -f "`git root`/project.clj" ]
+ROOT=$(git rev-parse --show-toplevel)
+if [ -f "$ROOT/project.clj" ]
 then
-    cd `git root`
-    RET=$(lein deploy clojars)
+    cd "$ROOT"
+    exec lein deploy clojars
 fi
-
-exit $RET
